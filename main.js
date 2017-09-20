@@ -19,14 +19,20 @@
 document.getElementById('flickrpics').addEventListener('click', (event) => {
   event.preventDefault()
   let url = 'https://www.flickr.com/services/feeds/photos_public.gne?tags=punctuation,atsign&format=json&jsoncallback=?'
-  //added JSONP to callback
+  //added jsoncallback=?
   $.getJSON(url)
   .then(data => {
     console.log(data.items)
     const items = data.items
     let feed = ``
-    items.forEach(() => {
-      console.log('link', items.link)
+    items.forEach((item, i) => {
+      let description = items[i].description
+      let feed = `
+        <div class="pic-card">
+          <div class="pic-info">${description}</div>
+        </div>
+        `
+      document.getElementById('flickrfeed').insertAdjacentHTML('beforeend', feed)
     })
   })
 })
