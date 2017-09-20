@@ -64,7 +64,9 @@ li input {
 <h2>Part 2: cPanel.net</h2>
 <p>cPanel is a leading Web Hosting Control Panel Software provider supplying hosting automation tools to numerous data centers and customers all around the world. cPanel offers web hosting software that automates the intricate workings of web hosting servers. cPanel products are used on tens of thousands of servers worldwide to equip server administrators with the tools they need to provide top notch hosting to their customers. Since our beginnings in 1997, cPanel has been setting the standard for web hosting automation.</p>
 	<input type="button" id="findoutmore" value="Find Out More" />
+<div id="popup"></div>
 <br /><br />
+
 <script type="text/javascript">
 
 var thisArray = [ 'T','h','a','i','s','b',' ','i','c','s',' ','a','t','h','e','e',' ','t','s','o','r','n','g','t',
@@ -95,15 +97,16 @@ for (var i = 0; i< len; i++){
 <h2>Part 4: Flickr Photos</h2>
 <p>Click on the button to see where it's _______.</p>
 <input type="button" id="flickrpics" value="Show Pictures" />
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 document.getElementById('flickrpics').addEventListener('click', (event) => {
   event.preventDefault()
-  let proxy = 'https://cors-anywhere.herokuapp.com/'
-  let url = 'http://www.flickr.com/services/feeds/photos_public.gne?tags=punctuation,atsign&format=json'
-  fetch(proxy + url)
-  .then(res => res.json())
-
-  // .then(feed => {
+  let url = "https://www.flickr.com/services/feeds/photos_public.gne?tags=punctuation,atsign&format=json"
+  fetch(url)
+  .then(function(response) {
+    console.log(response.json)
+  }) -->
+  <!-- // .then(feed => {
+  //   let container = ""
   //   for(var t = 0; t < feed.length; t++){
   //     title = feed.items.title
   //     picture = feed.items.media.m
@@ -111,10 +114,16 @@ document.getElementById('flickrpics').addEventListener('click', (event) => {
   //     console.log('picture', picture)
   //   }
   // })
-  // .catch(error){
-  //  console.log('These are not the droids you're looking for)
+  // .catch(err) {
+  //   console.log('These are not the droids you\'re looking for')
   // }
-})
+}) -->
 </script>
+<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
