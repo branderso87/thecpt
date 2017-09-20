@@ -2,16 +2,16 @@
 document.getElementById('findoutmore').addEventListener('click', () => {
   const site = `<iframe src="http://localhost:3000"></iframe>`
   document.getElementById('popup').innerHTML = site
-})
-YUI().use('panel', function (Y) {
-  let panel = new Y.Panel({
-        srcNode : '#popup',
-        width   : 400,
-        centered: true,
-        render  : true,
-        modal  : true,
-        hideOn: [{eventName: 'clickoutside'}, {node: Y.one('#findoutmore')}]
+  YUI().use('panel', function (Y) {
+    let panel = new Y.Panel({
+      srcNode : '#popup',
+      width   : 400,
+      centered: true,
+      render  : true,
+      modal  : true,
+      hideOn: [{eventName: 'clickoutside'}, {node: Y.one('#findoutmore')}]
     })
+  })
 })
 
 //Part 3 The Array
