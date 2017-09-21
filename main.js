@@ -1,11 +1,10 @@
 //Part 1: Form Validation
-
 const upperCase = /[A-Z]/g
 const lowerCase = /[a-z]/g
 const number = /[\d]/g
-const moreNum = /[a{2,}]/g
-const nonDigit = /[\D]/g
 const specialChar = /[_+-.,!@#$%^&*();\/|<>"']/g
+const moreNum = /[\d{2,}]/g
+const nonDigit = /[\D]/g
 
 function ckUsername(username) {
   if(username.value === '') {
@@ -24,26 +23,28 @@ function ckUsername(username) {
   return true
 }
 function ckPassword(password) {
+
   if(password.value === '') {
     alert('This field cannot be empty')
     return false
   }if(moreNum.test(password.value) === false) {
     alert('Password must include 2 or more numbers')
     return false
-  } if(password.value < 8 || password.value > 15) {
+  } if(password.value > 8 || password.value < 15) {
     alert('Password must be between 8-15 characters in length')
     return false
   }
   return true
 }
 function ckNumber(usernumber) {
+
   if(usernumber.value === '') {
     alert('This field cannot be empty')
     return false
-  }if(moreNum.test(usernumber.value) === false) {
-    alert('Password must include 2 or more numbers')
+  }if(nonDigit.test(usernumber.value) === true) {
+    alert('Usernumber MUST ONLY include numbers')
     return false
-  } if(usernumber.value.length === 36) {
+  } if(usernumber.value > 35 && usernumber.value < 37) {
     alert('Password must be between 8-15 characters in length')
     return false
   }
@@ -59,6 +60,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
   }if(ckNumber(loginform.usernumber)) {
     console.log('yay usernumber')
   }
+
 })
 
 
