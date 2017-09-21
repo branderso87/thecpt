@@ -1,14 +1,79 @@
+//Part 1: Form Validation
+
+const upperCase = /[A-Z]/g
+const lowerCase = /[a-z]/g
+const number = /[\d]/g
+const moreNum = /[a{2,}]/g
+const nonDigit = /[\D]/g
+const specialChar = /[_+-.,!@#$%^&*();\/|<>"']/g
+
+function ckUsername(username) {
+  if(username.value === '') {
+    alert('This field cannot be empty')
+    return false
+  }if (upperCase.test(username.value) === false || lowerCase.test(username.value) === false) {
+    alert('Username must include an Uppercase and Lowercase letter(A-Z)')
+    return false
+  }if(number.test(username.value) === false) {
+    alert('Username must include at least 1 number (0-9)')
+    return false
+  }if(specialChar.test(username.value) === true) {
+    alert('Username MUST NOT include any special characters(_+-.,!@#$%^&*();\/|<>\"\') or spaces')
+    return false
+  }
+  return true
+}
+function ckPassword(password) {
+  if(password.value === '') {
+    alert('This field cannot be empty')
+    return false
+  }if(moreNum.test(password.value) === false) {
+    alert('Password must include 2 or more numbers')
+    return false
+  } if(password.value < 8 || password.value > 15) {
+    alert('Password must be between 8-15 characters in length')
+    return false
+  }
+  return true
+}
+function ckNumber(usernumber) {
+  if(usernumber.value === '') {
+    alert('This field cannot be empty')
+    return false
+  }if(moreNum.test(usernumber.value) === false) {
+    alert('Password must include 2 or more numbers')
+    return false
+  } if(usernumber.value.length === 36) {
+    alert('Password must be between 8-15 characters in length')
+    return false
+  }
+  return true
+}
+
+document.querySelector('form').addEventListener('submit', (event) => {
+  event.preventDefault()
+  if(ckUsername(loginform.username)) {
+    console.log('username yay')
+  }if(ckPassword(loginform.password)) {
+    console.log('yay password')
+  }if(ckNumber(loginform.usernumber)) {
+    console.log('yay usernumber')
+  }
+})
+
+
 // Part 2: cPanel.net
 document.getElementById('findoutmore').addEventListener('click', () => {
-  const site = `<iframe src="http://localhost:3000"></iframe>`
+  const site = `<iframe class="container" src="http://localhost:3000"></iframe>`
   document.getElementById('popup').innerHTML = site
   YUI().use('panel', function (Y) {
     let panel = new Y.Panel({
       srcNode : '#popup',
-      width   : 400,
+      width: 400,
+      height: 400,
       centered: true,
-      render  : true,
-      modal  : true,
+      render: true,
+      modal: true,
       hideOn: [{eventName: 'clickoutside'}, {node: Y.one('#findoutmore')}]
     })
   })
@@ -45,5 +110,8 @@ document.getElementById('flickrpics').addEventListener('click', (event) => {
       return feed
     })
     document.getElementById('flickrfeed').insertAdjacentHTML('beforeend', feed)
+  })
+  .catch((error) => {
+    console.error(error);
   })
 })
