@@ -1,0 +1,108 @@
+/*
+cpanel orange: #F46D28 rgb(244, 109, 40)
+cpanel Blue: #009cde rgb(0,156,222)
+colorbox Gray: #f4f4f4 rgb(244, 244, 244)
+footer Dark Green/Blue: #0c1f24 rgb(12, 31, 36)
+colorblock Accent Green/Blue: #19404a rgb(25, 64, 74)
+*/
+h1, h2, h3 {
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 25px;
+  margin-bottom: 12.5px;
+}
+h1 {
+  font-size: 3.25em;
+}
+h2 {
+  margin: 2% 0 3% 0;
+  font-size:2em;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3em;
+  }
+}
+.jumbotron h3 {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:3em;
+  font-weight: 100;
+  letter-spacing: -0.01em;
+  line-height: 1.5em;
+  padding: 10px 0 15px;
+}
+.bg-nav {
+  background: white;
+  border-bottom: lightgrey;
+}
+.bg-gray {
+  background: rgba(244, 244, 244, .5)
+}
+.bg-orange {
+  background: #F46D28;
+  color: white;
+}
+.bg-blue {
+  background: #009cde;
+}
+.top-banner {
+  background-image: url("https://images.unsplash.com/photo-1461632830798-3adb3034e4c8?dpr=2&auto=format&fit=crop&w=1199&h=800&q=80&cs=tinysrgb&crop=");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  background-color: #596b70;
+  height: 20%;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.jumbotron {
+  margin: 10% 0 20% 0;
+  color: inherit;
+  background-color: transparent;
+}
+.container-max-width {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p{
+  font-size: 1.25em;
+}
+.input-labels {
+  font-size: 1.25em;
+  /*padding-bottom: 8px;
+  padding-left: 4px;*/
+  text-align: left;
+}
+.input-fields {
+  height: 32px;
+  border-radius: 4px;
+  border: 2px solid #bebebe;
+  background-color: #fff;
+  width: 50%;
+}
+.form-wrapper {
+  width: 500px;
+}
+@media (max-width: 480px) {
+  .form-wrapper {
+    width: 100%;
+    min-width: 285px;
+  }
+}
+.btn-outline-white {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+.navbar-brand {
+  padding: 50px 0 50px 10px;
+}
+a.navbar-brand img{
+  height: 90px;
+}
