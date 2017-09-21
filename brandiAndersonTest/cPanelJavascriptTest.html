@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>cPanel UI Developer Javascript Test</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" href="master.css">
+<!-- Sorry about the inline css. We would normally use external css but wanted to only have a single file for the test -->
+<style type="text/css">
+label{
+	/*width:155px;*/
+	display:block;
+	float:left;
+	text-align:right;
+	padding:0 15px 0 0;
+}
+ul.nobullet{
+	list-style-type:none;
+}
+li {
+	margin:0 0 15px 0;
+}
+li input {
+	padding:2px;
+	border:solid 1px #7295ba;
+}
+#submit_btn {
+	color:#fff;
+	cursor:pointer;
+}
+</style>
+<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default bg-nav">
+    <a class="navbar-brand" href="https://cpanel.com">
+      <img src="https://cpanel.com/assets/img/cP-logo.png" alt="cPanel Logo">
+    </a>
+  </nav>
+  <div class="container-fluid top-banner">
+    <div class="row">
+      <div class="jumbotron container-max-width text-center">
+        <h1>cPanel Javascript Skills Assessment</h1>
+        <h3>Developed by Brandi Anderson</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="registrationform">
+  	<h2 class="text-center">Part 1: Register your cPanel Software</h2>
+    <div class="container">
+      <div class="form-wrapper container">
+        <form  class= "row" action="register.cgi" method="POST" name="loginform">
+          <input type="hidden" name="action" value="register" />
+          <ul class="nobullet center-block">
+            <li class="form-group has-danger">
+              <label class="input-labels" for="username">Desired user name</label>
+              <input class="form-control" type="text" id="username" name="username"  value="" />
+              <div class="form-control-feedback" id="userCheck"></div>
+            </li><!--must contain a lower and upper case letter and at least 1 number. Cannot contain special characters -->
+            <li class="form-group has-danger">
+              <label class="input-labels" for="password">Password</label>
+              <input class="form-control" type="password" id="password" name="password" value="" />
+              <div class="form-control-feedback" id="psswrdCheck"></div>
+            </li><!--must contain at least 2 numbers and be 8 to 15 characters in length-->
+            <li class="form-group has-danger">
+              <label class="input-labels" for="usernumber">User Number</label>
+              <input class="form-control" type="text" id="usernumber" name="usernumber" value="" />
+              <div class="form-control-feedback" id="numberCheck"></div>
+            </li><!--must be 36 digits and have no non-numeral characters-->
+            <li class="form-group has-danger">
+              <label class="input-labels" for="geoglocation">Geographic Location</label>
+              <input class="form-control" type="text" id="geoglocation" name="geoglocation" value="" />
+              <div class="form-control-feedback"></div>
+            </li><!--currently no input validation is used as the input validation would be different for US and non-US locations-->
+            <li class="form-group">
+              <input class="btn btn-lg btn-block bg-blue" type="submit" alt="register" name="register" value="Register" id="submit_btn" />
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-gray">
+    <div class="jumbotron container-max-width text-center ">
+      <div class="col-md-12 yui3-skin-sam">
+        <h2>Part 2: cPanel.net</h2>
+        <p>cPanel is a leading Web Hosting Control Panel Software provider supplying hosting automation tools to numerous data centers and customers all around the world. cPanel offers web hosting software that automates the intricate workings of web hosting servers. cPanel products are used on tens of thousands of servers worldwide to equip server administrators with the tools they need to provide top notch hosting to their customers. Since our beginnings in 1997, cPanel has been setting the standard for web hosting automation.</p>
+        <input class="btn btn-lg bg-orange" type="button" id="findoutmore" value="Find Out More" />
+        <div id="popup"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="jumbotron container-max-width text-center">
+      <h2>Part 3: The Array:</h2>
+      <p id="thisArray"></p>
+    </div>
+  </div>
+  <div class="">
+    <div class="container-fluid bg-orange">
+      <div class="jumbotron container-max-width text-center">
+        <h2>Part 4: Flickr Photos</h2>
+        <p>Click on the button to see where it's _______.</p>
+        <input class="btn btn-lg btn-outline-white" type="button" id="flickrpics" value="Show Pictures" />
+      </div>
+    </div>
+    <div class="container-fluid flickr-wrapper">
+      <div class="card-group card-columns" id="flickrfeed"></div>
+    </div>
+  </div>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
