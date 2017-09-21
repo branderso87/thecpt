@@ -60,17 +60,17 @@ li input {
             <li class="form-group has-danger">
               <label class="input-labels" for="username">Desired user name</label>
               <input class="form-control" type="text" id="username" name="username"  value="" />
-              <div class="form-control-feedback"></div>
+              <div class="form-control-feedback" id="userCheck"></div>
             </li><!--must contain a lower and upper case letter and at least 1 number. Cannot contain special characters -->
             <li class="form-group has-danger">
               <label class="input-labels" for="password">Password</label>
               <input class="form-control" type="password" id="password" name="password" value="" />
-              <div class="form-control-feedback"></div>
+              <div class="form-control-feedback" id="psswrdCheck"></div>
             </li><!--must contain at least 2 numbers and be 8 to 15 characters in length-->
             <li class="form-group has-danger">
               <label class="input-labels" for="usernumber">User Number</label>
               <input class="form-control" type="text" id="usernumber" name="usernumber" value="" />
-              <div class="form-control-feedback"></div>
+              <div class="form-control-feedback" id="numberCheck"></div>
             </li><!--must be 36 digits and have no non-numeral characters-->
             <li class="form-group has-danger">
               <label class="input-labels" for="geoglocation">Geographic Location</label>
@@ -109,8 +109,8 @@ li input {
         <input class="btn btn-lg btn-outline-white" type="button" id="flickrpics" value="Show Pictures" />
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="pic-gallery" id="flickrfeed"></div>
+    <div class="container-fluid flickr-wrapper">
+      <div class="card-group card-columns" id="flickrfeed"></div>
     </div>
   </div>
 <script type="text/javascript" src="main.js"></script>

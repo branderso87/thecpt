@@ -105,8 +105,8 @@ document.getElementById('flickrpics').addEventListener('click', (event) => {
     let feed = ''
     data.items.forEach((item) => {
       feed += `
-        <div class="pic-card">
-          <div class="pic-info">${item.description}</div>
+        <div class="card">
+          <div class="card-block">${item.description}</div>
         </div>
         `
       return feed
